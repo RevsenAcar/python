@@ -13,16 +13,23 @@ def Cevap1():
 Cevap1()
 
 # 2- Kullanıcıdan aldığı sayının mükemmel olup olmadığını söyleyen bir program yazınız.(Arş. Mükemmel sayı?)
-def Cevap2():
-    sayi = int(input("Lutfen bir sayi giriniz: "))
+def mukemmel_sayi_mi(sayi):
     toplam = 0
     for i in range(1, sayi):
         if sayi % i == 0:
             toplam += i
-    if toplam == sayi:
-        print(sayi, "mukemmel sayidir.")
+    return toplam == sayi
+
+while True:
+    sayi = int(input("Pozitif bir sayı girin: "))
+    if sayi <= 0:
+        print("Lütfen pozitif bir sayı girin!")
     else:
-        print(sayi, "mukemmel sayi degildir.")
+        if mukemmel_sayi_mi(sayi):
+            print("Girdiğiniz sayı mükemmel bir sayıdır.")
+        else:
+            print("Girdiğiniz sayı mükemmel bir sayı değildir.")
+        break
 
 Cevap2()
         
